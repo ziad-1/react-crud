@@ -27,8 +27,7 @@ export default function App() {
     }
   };
 
-  const editPhoneInfo = ()=>{
-    let index = +prompt('enter phone index you want to update');
+  const editPhoneInfo = (index)=>{
     let newNameValue = prompt('enter new phone name');
     let newPriceValue = prompt('enter new price');
     let newQty = prompt('enter new qty');
@@ -53,8 +52,7 @@ export default function App() {
   return (
     <div className="flex flex-col  gap-3.5 justify-center items-center mt-7">
       <button className="btn btn-primary w-[200px]" onClick={() => {addNewPhone();}}>add new phone</button>
-      <button className="btn btn-primary w-[200px]" onClick={() => {editPhoneInfo();}}>edit phone info </button>
-      <table className="table">
+      <table className="table ">
         <thead>
           <tr>
             <th>#</th>
@@ -74,7 +72,10 @@ export default function App() {
                 <td>{el.price}</td>
                 <td>{el.qty}</td>
                 <td>{el.qty * el.price}</td>
-                <td><button className="btn btn-error w-[150px]" onClick={() => {deleteIndex(index);}}>delete phone </button></td>
+                <td className="flex gap-1.5">
+                  <button className="btn btn-error w-[100px]" onClick={() => {deleteIndex(index);}}>delete </button>
+                  <button className="btn btn-primary w-[100px]" onClick={() => {editPhoneInfo(index);}}>edit</button>
+                  </td>
               </tr>
             );
           })}
