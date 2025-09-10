@@ -74,7 +74,7 @@ export default function App() {
                 <td>{el.price}</td>
                 <td>{el.qty}</td>
                 <td>{el.qty * el.price}</td>
-                <td><button className="btn btn-error w-[150px]" onClick={() => {deleteIndex();}}>delete phone </button></td>
+                <td><button className="btn btn-error w-[150px]" onClick={() => {deleteIndex(index);}}>delete phone </button></td>
               </tr>
             );
           })}
